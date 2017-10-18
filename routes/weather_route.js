@@ -4,7 +4,8 @@ const request = require('request')
 const weatherController = require('../controllers/weather_controller')
 
 router.get('/', function(req, res){
-  res.render('./home/home')
+  res.send(process.env.weather_key)
+  // res.render('./home/home')
 })
 
 router.post('/', function(req,res){
