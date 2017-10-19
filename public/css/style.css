@@ -1,0 +1,16 @@
+.hourly{
+background-color: brick-red;
+width: 13%;
+display: inline-block;
+list-style-type: none;
+margin: 10px;
+}
+
+#forecastTitle{
+  text-align: center;
+}
+
+/*.icon{
+  display:block;
+  margin: 0 auto;
+}*/

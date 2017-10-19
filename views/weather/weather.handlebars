@@ -1,22 +1,30 @@
 <body>
-  <p>City: {{{city}}}</p>
-  <p>Current time: {{{current_time}}}</p>
-  <p>Current temp: {{{current_temp}}}</p>
-  <p>Current Description: {{{current_desc}}}</p>
 
-<h1>Forecast for {{{date}}}</h1>
-  <ul>
-    {{#each arrs as |arr|}}
-    <div class="hourly">
-      <li>Time: {{{arr.time}}}h</li>
-      Temp: {{{arr.temp}}}C<br>
-      Description: {{{arr.desc}}}<br>
-      Precipitation: {{{arr.precip}}}mm<br>
-      Chance of rain (%): {{{arr.rain}}}<br>
-      <br>
+  <div class="container">
+    <div class="">
+      <p>City: {{{city}}}</p>
+      <p>Current time: {{{current_time}}} UTC</p>
+      <p>Current temp: {{{current_temp}}} C</p>
+      <p>{{{current_desc}}}</p>
+      <img src="{{{current_icon}}}" alt="">
     </div>
 
-    {{/each}}
-  </ul>
+
+  <h1 id=forecastTitle>Forecast for {{{date}}}</h1>
+    <ul>
+      {{#each arrs as |arr|}}
+      <div class="hourly">
+        <li>{{{arr.time}}}h</li>
+        Temp: {{{arr.temp}}}C<br>
+        Description: {{{arr.desc}}}<br>
+        Precipitation: {{{arr.precip}}}mm<br>
+        Chance of rain: {{{arr.rain}}} %<br>
+        <img class="icon" src="{{{arr.icon}}}" alt="">
+      </div>
+
+      {{/each}}
+    </ul>
+  </div>
+
 
 </body>
