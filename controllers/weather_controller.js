@@ -3,7 +3,7 @@ const request= require('request')
 
 
 function weatherQuery (req, res){
-// res.send(req.body)
+
   var url = 'http://api.worldweatheronline.com/premium/v1/weather.ashx?'
   var location = 'q=' + req.body.location
   var date = 'date=' + req.body.date
@@ -15,7 +15,7 @@ function weatherQuery (req, res){
   var urlStr = url + api + '&' + location + '&' + date+ '&' + num + '&' + format + '&' + tp
 
   request (urlStr, function (error, response, body) {
-      // res.send(JSON.parse(body))
+      // res.send(JSON.parse(body).data.weather[0].hourly)
       var hourly= JSON.parse(body).data.weather[0].hourly
       var arrs = []
       var date = JSON.parse(body).data.weather[0].date

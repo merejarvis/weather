@@ -1,19 +1,21 @@
 <body>
 
   <div class="container">
-    <div class="">
+
+    <div class="weatherHead">
       <p>City: {{{city}}}</p>
       <p>Current time: {{{current_time}}} UTC</p>
       <p>Current temp: {{{current_temp}}} C</p>
       <p>{{{current_desc}}}</p>
       <img src="{{{current_icon}}}" alt="">
     </div>
+<p style="text-align:center"><a href="/">Make another query</a></p>
 
 
   <h1 id=forecastTitle>Forecast for {{{date}}}</h1>
     <ul>
       {{#each arrs as |arr|}}
-      <div class="hourly">
+      <div class="hourly col-sm-3">
         <li>{{{arr.time}}}h</li>
         Temp: {{{arr.temp}}}C<br>
         Description: {{{arr.desc}}}<br>
