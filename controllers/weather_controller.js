@@ -15,7 +15,7 @@ function weatherQuery (req, res){
   var urlStr = url + api + '&' + location + '&' + date+ '&' + num + '&' + format + '&' + tp
 
   request (urlStr, function (error, response, body) {
-      res.send(JSON.parse(body).data)
+      // res.send(JSON.parse(body).data)
       var hourly= JSON.parse(body).data.weather[0].hourly
       var arrs = []
       var date = JSON.parse(body).data.weather[0].date
@@ -46,7 +46,7 @@ function weatherQuery (req, res){
         arrs.push(obj)
       }
       console.log(arrs);
-      // res.render('./weather/weather', {arrs: arrs, city: city, current_time: current_time, current_temp: current_temp, current_desc: current_desc, date: date, current_icon:current_icon})
+      res.render('./weather/weather', {arrs: arrs, city: city, current_time: current_time, current_temp: current_temp, current_desc: current_desc, date: date, current_icon:current_icon})
   })
 }
 
