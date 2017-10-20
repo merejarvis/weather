@@ -35,10 +35,6 @@ app.use(session({ cookie: { maxAge: 60000 },
 
 app.use('/', weatherRoute)
 
-app.get('/', function (req, res){
-  res.render('./home/home', {message: req.flash('error')})
-})
-
 var port = process.env.PORT || 8000
 
 app.listen(port, function () {

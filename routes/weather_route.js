@@ -3,9 +3,9 @@ const router = express.Router()
 const request = require('request')
 const weatherController = require('../controllers/weather_controller')
 
-// router.get('/', function (req, res){
-//   res.render('./home/home', {flash: req.flash()})
-// })
+router.get('/', function (req, res){
+  res.render('./home/home', {message: req.flash('error')})
+})
 
 router.post('/', weatherController.weatherQuery)
 

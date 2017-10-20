@@ -14,8 +14,6 @@ function weatherQuery (req, res){
 
   var urlStr = url + api + '&' + location + '&' + date+ '&' + num + '&' + format + '&' + tp
 
-
-
   request (urlStr, function (error, response, body) {
       if(JSON.parse(body).data.hasOwnProperty('error')){
         req.flash('error', 'Invalid location/ date.')
